@@ -1,0 +1,28 @@
+.tab{
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.tab.active{
+    border-color: var(--colorHighlightBg);
+}
+
+
+.tab-position[style*="z-index: 2;"]::before,
+.tab-position[style*="z-index: 2;"]::after {
+    content: " ";
+    position: absolute;
+    background-color: var(--colorHighlightBg);
+    width: 100vw;
+    height: 1px;
+    bottom: 0px;
+}
+
+.tab-position[style*="z-index: 2"]::before{
+    left: calc(100% - 1px);
+    z-index: 2;
+}
+.tab-position[style*="z-index: 2"]::after{
+    right: 100%;
+}
